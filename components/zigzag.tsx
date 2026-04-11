@@ -12,7 +12,7 @@ export default function Zigzag() {
 
           {/* Section header */}
           <div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
-            <div className="inline-flex text-sm font-semibold py-1 px-3 m-2 text-green-600 bg-green-200 rounded-full mb-4">六轮越野车</div>
+            <div className="inline-flex text-sm font-semibold py-1 px-3 m-2 text-green-600 bg-green-200 rounded-full mb-4">六轮智能农业作业机器人</div>
             <h1 className="h2 mb-4">看看我们的全新的技术路线</h1>
             <p className="text-xl text-gray-400"></p>
           </div>
