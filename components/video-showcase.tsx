@@ -3,13 +3,13 @@ const videos = [
     title: '自主导航演示',
     description:
       '展示机器人在农业场景中的路径跟踪、障碍规避与末端停靠能力。',
-    src: '/videos/video_1.mp4',
+    src: '/videos/video_2.mp4',
   },
   {
     title: '机械臂抓取演示',
     description:
       '展示机械臂接近目标、末端调整与抓取执行的完整作业过程。',
-    src: '/videos/video_2.mp4',
+    src: '/videos/video_3.mp4',
   },
 ]
 
