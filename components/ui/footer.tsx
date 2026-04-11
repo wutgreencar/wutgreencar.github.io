@@ -94,7 +94,7 @@ export default function Footer() {
           {/* Bottom area */}
           <div className="md:flex md:items-center md:justify-between">
             {/* Copyrights note */}
-            <div className="text-gray-400 text-sm">&copy; 2025 复杂地形运输机器人项目组. 保留所有权利.</div>
+            <div className="text-gray-400 text-sm">&copy; 2026 六轮自主采摘机器人项目组. 保留所有权利.</div>
           </div>
 
         </div>
