@@ -19,31 +19,32 @@ export default function LearnMore() {
                         <div className="text-gray-400">
                             <h3 className="h3 text-gray-200 mb-4">核心技术</h3>
                             <div className="mb-8">
-                                <h4 className="h4 text-gray-200 mb-2">视觉感知系统</h4>
+                                <h4 className="h4 text-gray-200 mb-2">自主导航系统</h4>
                                 <p className="mb-4">
-                                    采用深度学习算法实现环境识别和障碍物检测，
-                                    通过多传感器融合提高感知精度和可靠性。
+                                    结合视觉感知与路径规划算法，实现六轮小车在农业场景中的自主巡行、路径跟踪与障碍规避，并能够在接近目标区域后完成停车对位，为后续机械臂作业提供基础。
                                 </p>
 
-                                <h4 className="h4 text-gray-200 mb-2">路径规划算法</h4>
+                                <h4 className="h4 text-gray-200 mb-2">果实识别与定位</h4>
                                 <p className="mb-4">
-                                    采用分层式路径规划算法，在降低计算复杂度的同时，
-                                    保证路径的安全性和可行性。
+                                    通过视觉识别技术对目标果实进行检测，并结合空间位置信息完成目标定位，将图像中的果实信息转换为机械臂可调用的坐标数据，提高后续摘取的准确性和可行性。
                                 </p>
 
-                                <h4 className="h4 text-gray-200 mb-2">控制系统</h4>
+                                <h4 className="h4 text-gray-200 mb-2">机械臂控制系统</h4>
                                 <p className="mb-4">
-                                    采用自适应控制策略，根据地形特征动态调整运动参数，
-                                    保证运输过程的稳定性和效率。
+                                    根据目标果实位置进行机械臂运动规划与末端调整，完成接近、夹持和简单摘取动作，实现从目标识别到作业执行的衔接，提升整机协同作业能力。
+                                </p>
+                                 <h4 className="h4 text-gray-200 mb-2">六轮底盘运动控制</h4>
+                                <p className="mb-4">
+                                    采用六轮底盘结构提升复杂地形下的通过性和稳定性，并结合运动控制策略保证机器人在果园、田间等非结构化环境中的平稳行驶，为视觉识别和机械臂作业提供稳定平台。
                                 </p>
                             </div>
 
                             <h3 className="h3 text-gray-200 mb-4">应用场景</h3>
                             <ul className="list-disc list-inside mb-8">
-                                <li className="mb-2">救援抢险工作</li>
-                                <li className="mb-2">军事侦查和巡逻任务</li>
-                                <li className="mb-2">农业环境作业</li>
-                                <li className="mb-2">物流搬运工作</li>
+                                <li className="mb-2">果园果实采摘</li>
+                                <li className="mb-2">温室作物作业</li>
+                                <li className="mb-2">农业样本采集</li>
+                                <li className="mb-2">田间自主巡检</li>
                             </ul>
                         </div>
                     </div>
