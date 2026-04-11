@@ -6,7 +6,7 @@ export default function Features() {
 
           {/* Section header */}
           <div className="max-w-3xl mx-auto text-center pb-12 md:pb-20">
-            <h2 className="h2 mb-4">复杂地形运输困境？看我们如何一一化解</h2>
+            <h2 className="h2 mb-4">农业场景作业难题？看我们如何逐一化解</h2>
             <p className="text-xl text-gray-400"></p>
           </div>
 
@@ -20,8 +20,8 @@ export default function Features() {
                 <path className="stroke-current text-purple-100" d="M30 39.313l-4.18 2.197L27 34.628l-5-4.874 6.91-1.004L32 22.49l3.09 6.26L42 29.754l-3 2.924" strokeLinecap="square" strokeWidth="2" fill="none" fillRule="evenodd" />
                 <path className="stroke-current text-purple-300" d="M43 42h-9M43 37h-9" strokeLinecap="square" strokeWidth="2" />
               </svg>
-              <h4 className="h4 mb-2  text-center">跨模态特征融合的低效性问题</h4>
-              <p className="text-lg text-gray-400 text-center">动态特征互补模块(FC)通过通道注意力机制自适应融合RGB-D多层级特征,提升语义分割精度。</p>
+              <h4 className="h4 mb-2  text-center">复杂地形下的稳定通行问题</h4>
+              <p className="text-lg text-gray-400 text-center">针对果园、田间地面起伏、草地泥地并存等情况，采用六轮底盘结构提升接地能力与通过性能，增强机器人在农业非结构化环境中的行驶稳定性，为后续识别与摘取提供可靠平台。</p>
             </div>
 
             {/* 2nd item */}
@@ -31,8 +31,8 @@ export default function Features() {
                 <path className="stroke-current text-purple-100" strokeWidth="2" strokeLinecap="square" d="M21 23h22v18H21z" fill="none" fillRule="evenodd" />
                 <path className="stroke-current text-purple-300" d="M26 28h12M26 32h12M26 36h5" strokeWidth="2" strokeLinecap="square" />
               </svg>
-              <h4 className="h4 mb-2  text-center">可通行性估计泛化性与鲁棒性</h4>
-              <p className="text-lg text-gray-400 text-center">双分支RGB-D协同推理框架,动态融合语义与几何特征并时序优化,增强可通行性分析的抗干扰能力。</p>
+              <h4 className="h4 mb-2  text-center">果实识别与定位精度问题</h4>
+              <p className="text-lg text-gray-400 text-center">结合视觉识别技术对目标果实进行检测，并利用空间位置信息完成目标定位，将图像中的果实信息转换为机械臂可调用的坐标数据，提高摘取过程中的定位准确性与作业可行性。</p>
             </div>
 
             {/* 3rd item */}
@@ -45,8 +45,8 @@ export default function Features() {
                   <circle className="stroke-current text-purple-100" cx="11" cy="11" r="11" />
                 </g>
               </svg>
-              <h4 className="h4 mb-2  text-center">实时性与模型效率的平衡问题</h4>
-              <p className="text-lg text-gray-400 text-center">轻量化双分支RGB-D网络设计,结合可分离卷积与特征压缩,实现越野场景下的实时嵌入式推理。</p>
+              <h4 className="h4 mb-2  text-center">自主导航与精准停靠问题</h4>
+              <p className="text-lg text-gray-400 text-center">通过环境感知与路径规划实现农业场景中的自主巡行、路径跟踪和障碍规避，并在接近目标后根据机械臂工作范围完成末端对位，使机器人不仅能到达目标区域，还能停在合适作业位置。</p>
             </div>
 
             {/* 4th and 5th items container */}
@@ -60,8 +60,8 @@ export default function Features() {
                     <circle className="stroke-current text-purple-300" cx="13" cy="9" r="3" />
                   </g>
                 </svg>
-                <h4 className="h4 mb-2  text-center">运动学可行路径的生成与优化问题</h4>
-                <p className="text-lg text-gray-400 text-center">基于运动学约束与多目标优化的动态路径规划方法,确保复杂3D环境下无人车的可行性与运动效率。</p>
+                <h4 className="h4 mb-2  text-center">机械臂摘取动作稳定性问题</h4>
+                <p className="text-lg text-gray-400 text-center">根据果实位置进行机械臂运动规划与末端调整，完成接近、夹持和简单摘取动作，减少因目标偏差、姿态不合适或底盘位置不佳带来的摘取失败问题。</p>
               </div>
 
               {/* 5th item */}
@@ -73,8 +73,8 @@ export default function Features() {
                     <path className="stroke-current text-purple-300" d="M22 30h4v12h-4z" />
                   </g>
                 </svg>
-                <h4 className="h4 mb-2  text-center">复杂3D环境中实时性自主探索问题</h4>
-                <p className="text-lg text-gray-400 text-center">分层自主探索框架,联合环境感知与约束感知路径优化,突破复杂3D场景下的实时性与全局效率瓶颈。</p>
+                <h4 className="h4 mb-2  text-center">导航与机械臂协同作业问题</h4>
+                <p className="text-lg text-gray-400 text-center">构建“自主巡行—果实识别—精准停靠—机械臂摘取”的闭环任务流程，使导航系统、视觉模块与机械臂控制相互衔接，提升整机在农业场景中的连续作业能力。</p>
               </div>
             </div>
 
