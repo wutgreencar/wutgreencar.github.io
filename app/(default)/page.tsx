@@ -6,6 +6,7 @@ export const metadata = {
 import Hero from '@/components/hero'
 import Features from '@/components/features'
 import Newsletter from '@/components/newsletter'
+import VideoShowcase from '@/components/video-showcase'
 import Zigzag from '@/components/zigzag'
 import Testimonials from '@/components/testimonials'
 import Testimonials_2 from '@/components/testimonials_2'
@@ -14,6 +15,7 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <VideoShowcase />
       <Features />
       <Zigzag />
       <Testimonials />
