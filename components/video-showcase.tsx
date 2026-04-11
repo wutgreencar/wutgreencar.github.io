@@ -21,7 +21,7 @@ export default function VideoShowcase() {
           <div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
             <h2 className="h2 mb-4">核心作业视频展示</h2>
             <p className="text-xl text-gray-400">
-              在主界面直接查看自主导航与机械臂抓取的实际演示。
+              自主导航与机械臂抓取的实际演示
             </p>
           </div>
 
