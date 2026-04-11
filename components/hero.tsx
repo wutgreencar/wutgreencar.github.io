@@ -25,7 +25,7 @@ export default function Hero() {
           {/* Section header */}
           <div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
             <h1 className="h1 mb-4" data-aos="fade-up">绿脉·六驱全地形自适应抓取机器人</h1>
-            <p className="text-xl text-gray-400 mb-8" data-aos="fade-up" data-aos-delay="200">机器人技术发展促使轮式移动平台在复杂环境应用增加，本机器人旨在解决复杂非结构化环境下运动控制和路径规划难题。</p>
+            <p className="text-xl text-gray-400 mb-8" data-aos="fade-up" data-aos-delay="200">随着机器人技术的发展，轮式移动平台在农业等复杂环境中的应用不断增加。本项目设计的六轮机器人面向非结构化农业场景，重点解决自主移动过程中的运动控制、路径规划与作业协同问题。</p>
             <div className="max-w-xs mx-auto sm:max-w-none sm:flex sm:justify-center">
               <div data-aos="fade-up" data-aos-delay="400">
                 <a className="btn text-white bg-purple-600 hover:bg-purple-700 w-full mb-4 sm:w-auto sm:mb-0" href="/about">关于我们</a>
