@@ -73,7 +73,7 @@ export default function Footer() {
                   </li>
                   <li className="mb-1">
                     <a
-                      href="/docs/technical-doc.pdf"
+                      href="/docs/wutgreencar-report_new.pdf"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out"

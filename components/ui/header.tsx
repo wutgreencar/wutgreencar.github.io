@@ -37,7 +37,7 @@ export default function Header() {
               ))}
               <li>
                 <a
-                  href="/docs/technical-doc.pdf"
+                  href="/docs/wutgreencar-report_new.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-sm text-white bg-purple-600 hover:bg-purple-700 ml-3"
