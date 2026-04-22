@@ -3,6 +3,12 @@
 import { useState, useRef, useEffect } from 'react'
 import Link from 'next/link'
 
+const navItems = [
+  { label: '首页', href: '/' },
+  { label: '关于我们', href: '/about' },
+  { label: '技术详情', href: '/learn-more' },
+]
+
 export default function MobileMenu() {
   const [mobileNavOpen, setMobileNavOpen] = useState<boolean>(false)
 
@@ -59,19 +65,28 @@ export default function MobileMenu() {
         className="absolute top-full z-20 left-0 w-full px-4 sm:px-6 overflow-hidden transition-all duration-300 ease-in-out"
         style={mobileNavOpen ? { maxHeight: mobileNav.current?.scrollHeight, opacity: 1 } : { maxHeight: 0, opacity: 0.8 }}
       >
-        <ul className="bg-gray-800 px-4 py-2">
+        <ul className="bg-gray-800 px-4 py-2 border border-gray-700">
+          {navItems.map((item) => (
+            <li key={item.href}>
+              <Link
+                href={item.href}
+                className="flex font-medium w-full text-gray-200 hover:text-purple-300 py-2 justify-center transition duration-150 ease-in-out"
+                onClick={() => setMobileNavOpen(false)}
+              >
+                {item.label}
+              </Link>
+            </li>
+          ))}
           <li>
-            <Link href="/signin" className="flex font-medium w-full text-purple-600 hover:text-gray-200 py-2 justify-center" onClick={() => setMobileNavOpen(false)}>
-              Sign in
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/signup"
-              className="font-medium w-full inline-flex items-center justify-center border border-transparent px-4 py-2 my-2 rounded-sm text-white bg-purple-600 hover:bg-purple-700 transition duration-150 ease-in-out" onClick={() => setMobileNavOpen(false)}
+            <a
+              href="/docs/technical-doc.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium w-full inline-flex items-center justify-center border border-transparent px-4 py-2 my-2 rounded-sm text-white bg-purple-600 hover:bg-purple-700 transition duration-150 ease-in-out"
+              onClick={() => setMobileNavOpen(false)}
             >
-              Sign up
-            </Link>
+              技术文档
+            </a>
           </li>
         </ul>
       </nav>
