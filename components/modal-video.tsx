@@ -34,7 +34,7 @@ export default function ModalVideo({
       <div>
         <div className="relative flex justify-center items-center" data-aos="fade-up" data-aos-delay="200">
           <Image src={thumb} width={thumbWidth} height={thumbHeight} alt={thumbAlt} />
-          <button className="absolute group" onClick={() => { setModalOpen(true) }} aria-label="Watch the video">
+          <button className="absolute group" onClick={() => { setModalOpen(true) }} aria-label="播放项目演示视频">
             <svg className="w-16 h-16 sm:w-20 sm:h-20 hover:opacity-75 transition duration-150 ease-in-out" viewBox="0 0 88 88" xmlns="http://www.w3.org/2000/svg">
               <defs>
                 <linearGradient x1="78.169%" y1="9.507%" x2="24.434%" y2="90.469%" id="a">
@@ -72,15 +72,15 @@ export default function ModalVideo({
             enter="transition ease-out duration-200"
             enterFrom="opacity-0 scale-95"
             enterTo="opacity-100 scale-100"
-            leave="ttransition ease-out duration-200"
-            leaveFrom="oopacity-100 scale-100"
+            leave="transition ease-out duration-200"
+            leaveFrom="opacity-100 scale-100"
             leaveTo="opacity-0 scale-95"
           >
             <div className="max-w-6xl mx-auto h-full flex items-center">
               <Dialog.Panel className="w-full max-h-full aspect-video bg-black overflow-hidden">
                 <video ref={videoRef} width={videoWidth} height={videoHeight} loop controls>
                   <source src={video} type="video/mp4" />
-                  Your browser does not support the video tag.
+                  当前浏览器不支持视频播放。
                 </video>
               </Dialog.Panel>
             </div>

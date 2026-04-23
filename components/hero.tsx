@@ -1,9 +1,13 @@
-import VideoThumb from '@/public/images/hero-image-02.png'
-import ModalVideo from '@/components/modal-video'
+const heroStats = [
+  { value: '六驱', label: '全地形底盘' },
+  { value: 'RGB-D', label: '视觉感知定位' },
+  { value: 'ROS2', label: '系统协同框架' },
+  { value: '闭环', label: '导航到抓取流程' },
+]
 
 export default function Hero() {
   return (
-    <section>
+    <section className="relative">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 relative">
 
         {/* Illustration behind hero content */}
@@ -19,34 +23,53 @@ export default function Hero() {
           </svg>
         </div>
 
-        {/* Hero content */}
         <div className="relative pt-32 pb-10 md:pt-40 md:pb-16">
-
-          {/* Section header */}
-          <div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
-            <h1 className="h1 mb-4" data-aos="fade-up">绿脉·六驱全地形自适应抓取机器人</h1>
-            <p className="text-xl text-gray-400 mb-8" data-aos="fade-up" data-aos-delay="200">随着机器人技术的发展，轮式移动平台在农业等复杂环境中的应用不断增加。本项目设计的六轮机器人面向非结构化农业场景，重点解决自主移动过程中的运动控制、路径规划与作业协同问题。</p>
-            <div className="max-w-xs mx-auto sm:max-w-none sm:flex sm:justify-center">
-              <div data-aos="fade-up" data-aos-delay="400">
-                <a className="btn text-white bg-purple-600 hover:bg-purple-700 w-full mb-4 sm:w-auto sm:mb-0" href="/about">关于我们</a>
+          <div className="grid gap-10 lg:grid-cols-12 lg:gap-12 lg:items-center">
+            <div className="lg:col-span-5" data-aos="fade-up">
+              <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-sm font-medium text-emerald-300 mb-5">
+                <span className="h-2 w-2 rounded-full bg-emerald-400" aria-hidden="true" />
+                实机闭环作业展示
               </div>
-              <div data-aos="fade-up" data-aos-delay="600">
-                <a className="btn text-white bg-gray-700 hover:bg-gray-800 w-full sm:w-auto sm:ml-4" href="/learn-more">了解更多</a>
+              <h1 className="h1 mb-5">绿脉·六驱全地形自适应抓取机器人</h1>
+              <p className="text-xl text-gray-300 mb-8">
+                面向果园、田间等非结构化农业场景，集成六轮底盘、视觉感知、路径规划与机械臂控制，完成从自主巡行到目标抓取的连续作业流程。
+              </p>
+              <div className="max-w-xs sm:max-w-none sm:flex">
+                <a className="btn text-white bg-purple-600 hover:bg-purple-700 w-full mb-4 sm:w-auto sm:mb-0" href="/docs/wutgreencar-report_new.pdf" target="_blank" rel="noopener noreferrer">查看技术文档</a>
+                <a className="btn text-white bg-gray-700 hover:bg-gray-800 w-full sm:w-auto sm:ml-4" href="/learn-more">技术详情</a>
+              </div>
+            </div>
+
+            <div className="lg:col-span-7" data-aos="fade-up" data-aos-delay="150">
+              <div className="relative overflow-hidden rounded-lg border border-gray-700 bg-black shadow-2xl shadow-purple-900/20">
+                <video
+                  className="aspect-video w-full object-cover"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="metadata"
+                  poster="/images/hero-image-02.png"
+                  aria-label="六驱机器人实机作业演示"
+                >
+                  <source src="/videos/video_1.mp4" type="video/mp4" />
+                  当前浏览器不支持视频播放。
+                </video>
+                <div className="absolute left-4 top-4 rounded-full bg-black/70 px-3 py-1 text-sm font-medium text-white backdrop-blur">
+                  自主导航 + 机械臂协同
+                </div>
+              </div>
+              <div className="grid grid-cols-2 gap-3 pt-4 sm:grid-cols-4">
+                {heroStats.map((item) => (
+                  <div key={item.label} className="rounded-lg border border-gray-800 bg-gray-900/80 px-3 py-4 text-center">
+                    <div className="text-2xl font-bold text-white">{item.value}</div>
+                    <div className="mt-1 text-sm text-gray-400">{item.label}</div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
-
-          <ModalVideo
-            thumb={VideoThumb}
-            thumbWidth={1024}
-            thumbHeight={576}
-            thumbAlt="Modal video thumbnail"
-            video="/videos/video_1.mp4"
-            videoWidth={1920}
-            videoHeight={1080} />
-
         </div>
-
       </div>
     </section>
   )

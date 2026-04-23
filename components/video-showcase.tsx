@@ -13,16 +13,34 @@ const videos = [
   },
 ]
 
+const results = [
+  { label: '导航能力', value: '路径跟踪 / 避障 / 停靠' },
+  { label: '抓取链路', value: '识别定位 / 轨迹规划 / 执行' },
+  { label: '展示证据', value: '实机视频 + 技术文档' },
+]
+
 export default function VideoShowcase() {
   return (
     <section>
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="py-12 md:py-20 border-t border-gray-800">
           <div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
-            <h2 className="h2 mb-4">核心作业视频展示</h2>
+            <div className="inline-flex text-sm font-semibold py-1 px-3 text-amber-300 bg-amber-500/10 border border-amber-500/30 rounded-full mb-4">
+              实机验证成果
+            </div>
+            <h2 className="h2 mb-4">用视频证明机器人确实跑起来了</h2>
             <p className="text-xl text-gray-400">
-              自主导航与机械臂抓取的实际演示
+              把评委最关心的“能否移动、能否定位、能否抓取”提前放到首页中段。
             </p>
+          </div>
+
+          <div className="grid gap-4 pb-8 md:grid-cols-3">
+            {results.map((item) => (
+              <div key={item.label} className="rounded-lg border border-gray-800 bg-gray-900/70 p-4 text-center">
+                <div className="text-sm text-gray-500">{item.label}</div>
+                <div className="mt-2 font-semibold text-gray-100">{item.value}</div>
+              </div>
+            ))}
           </div>
 
           <div className="grid gap-8 lg:grid-cols-2">
@@ -46,7 +64,7 @@ export default function VideoShowcase() {
                     preload="metadata"
                   >
                     <source src={video.src} type="video/mp4" />
-                    Your browser does not support the video tag.
+                    当前浏览器不支持视频播放。
                   </video>
                 </div>
               </article>

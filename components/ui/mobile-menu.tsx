@@ -15,7 +15,6 @@ export default function MobileMenu() {
   const trigger = useRef<HTMLButtonElement>(null)
   const mobileNav = useRef<HTMLDivElement>(null)
 
-  // close the mobile menu on click outside
   useEffect(() => {
     const clickHandler = ({ target }: { target: EventTarget | null }): void => {
       if (!mobileNav.current || !trigger.current) return;
@@ -24,9 +23,8 @@ export default function MobileMenu() {
     };
     document.addEventListener('click', clickHandler)
     return () => document.removeEventListener('click', clickHandler)
-  })
+  }, [mobileNavOpen])
 
-  // close the mobile menu if the esc key is pressed
   useEffect(() => {
     const keyHandler = ({ keyCode }: { keyCode: number }): void => {
       if (!mobileNavOpen || keyCode !== 27) return;
@@ -34,7 +32,7 @@ export default function MobileMenu() {
     };
     document.addEventListener('keydown', keyHandler)
     return () => document.removeEventListener('keydown', keyHandler)
-  })
+  }, [mobileNavOpen])
 
   return (
     <div className="md:hidden">
@@ -46,7 +44,7 @@ export default function MobileMenu() {
         aria-expanded={mobileNavOpen}
         onClick={() => setMobileNavOpen(!mobileNavOpen)}
       >
-        <span className="sr-only">Menu</span>
+        <span className="sr-only">打开导航菜单</span>
         <svg
           className="w-6 h-6 fill-current text-gray-300 hover:text-gray-200 transition duration-150 ease-in-out"
           viewBox="0 0 24 24"

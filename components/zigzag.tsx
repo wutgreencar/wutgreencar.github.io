@@ -12,7 +12,7 @@ export default function Zigzag() {
             <div className="inline-flex text-sm font-semibold py-1 px-3 m-2 text-green-600 bg-green-200 rounded-full mb-4">
               六轮智能农业作业机器人
             </div>
-            <h1 className="h2 mb-4">看看我们的全新的技术路线</h1>
+            <h2 className="h2 mb-4">看看我们的全新的技术路线</h2>
             <p className="text-xl text-gray-400"></p>
           </div>
 
@@ -36,7 +36,7 @@ export default function Zigzag() {
               >
                 <div className="md:pr-4 lg:pr-12 xl:pr-16">
                   <div className="font-architects-daughter text-xl text-purple-600 mb-2">
-                    More speed. Less spend
+                    感知到执行
                   </div>
                   <h3 className="h3 mb-3">技术路线图</h3>
                   <p className="text-xl text-gray-400 mb-4">
@@ -98,7 +98,7 @@ export default function Zigzag() {
               >
                 <div className="md:pl-4 lg:pl-12 xl:pl-16">
                   <div className="font-architects-daughter text-xl text-purple-600 mb-2">
-                    More speed. Less spend
+                    系统集成
                   </div>
                   <h3 className="h3 mb-3">整体系统设计</h3>
                   <p className="text-xl text-gray-400 mb-4">
