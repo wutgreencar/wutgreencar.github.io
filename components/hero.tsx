@@ -28,7 +28,7 @@ export default function Hero() {
             <div className="lg:col-span-5" data-aos="fade-up">
               <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-sm font-medium text-emerald-300 mb-5">
                 <span className="h-2 w-2 rounded-full bg-emerald-400" aria-hidden="true" />
-                实机闭环作业展示
+                自主导航介绍视频
               </div>
               <h1 className="h1 mb-5">绿脉·六驱全地形自适应抓取机器人</h1>
               <p className="text-xl text-gray-300 mb-8">
@@ -50,13 +50,13 @@ export default function Hero() {
                   playsInline
                   preload="metadata"
                   poster="/images/hero-image-02.png"
-                  aria-label="六驱机器人实机作业演示"
+                  aria-label="六驱机器人自主导航介绍视频"
                 >
                   <source src="/videos/video_1.mp4" type="video/mp4" />
                   当前浏览器不支持视频播放。
                 </video>
                 <div className="absolute left-4 top-4 rounded-full bg-black/70 px-3 py-1 text-sm font-medium text-white backdrop-blur">
-                  自主导航 + 机械臂协同
+                  自主导航系统介绍
                 </div>
               </div>
               <div className="grid grid-cols-2 gap-3 pt-4 sm:grid-cols-4">

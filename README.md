@@ -22,4 +22,4 @@ pnpm dev
 
 ## 3.体验网站
 
-[面向复杂地形的运输机器人自主感知导航系统](http://101.201.46.137:3000/)
+https://wutgreencar.github.io/

@@ -7,7 +7,7 @@ import Hero from '@/components/hero'
 import Features from '@/components/features'
 import VideoShowcase from '@/components/video-showcase'
 import MissionFlow from '@/components/mission-flow'
-import JudgeValue from '@/components/judge-value'
+import ProjectValue from '@/components/project-value'
 import Zigzag from '@/components/zigzag'
 import Testimonials from '@/components/testimonials'
 import Testimonials_2 from '@/components/testimonials_2'
@@ -18,7 +18,7 @@ export default function Home() {
       <Hero />
       <MissionFlow />
       <VideoShowcase />
-      <JudgeValue />
+      <ProjectValue />
       <Features />
       <Zigzag />
       <Testimonials />

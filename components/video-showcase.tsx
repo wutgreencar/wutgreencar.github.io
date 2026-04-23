@@ -1,5 +1,11 @@
 const videos = [
   {
+    title: '自主导航介绍',
+    description:
+      '介绍六驱机器人自主导航系统的整体思路、感知输入与路径规划流程。',
+    src: '/videos/video_1.mp4',
+  },
+  {
     title: '自主导航演示',
     description:
       '展示机器人在农业场景中的路径跟踪、障碍规避与末端停靠能力。',
@@ -14,9 +20,9 @@ const videos = [
 ]
 
 const results = [
-  { label: '导航能力', value: '路径跟踪 / 避障 / 停靠' },
-  { label: '抓取链路', value: '识别定位 / 轨迹规划 / 执行' },
-  { label: '展示证据', value: '实机视频 + 技术文档' },
+  { label: '视频 01', value: '自主导航介绍' },
+  { label: '视频 02', value: '自主导航演示' },
+  { label: '视频 03', value: '机械臂抓取演示' },
 ]
 
 export default function VideoShowcase() {
@@ -26,11 +32,11 @@ export default function VideoShowcase() {
         <div className="py-12 md:py-20 border-t border-gray-800">
           <div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
             <div className="inline-flex text-sm font-semibold py-1 px-3 text-amber-300 bg-amber-500/10 border border-amber-500/30 rounded-full mb-4">
-              实机验证成果
+              最终展示视频
             </div>
-            <h2 className="h2 mb-4">用视频证明机器人确实跑起来了</h2>
+            <h2 className="h2 mb-4">最终展示视频</h2>
             <p className="text-xl text-gray-400">
-              把评委最关心的“能否移动、能否定位、能否抓取”提前放到首页中段。
+              依次展示自主导航介绍、自主导航实机演示和机械臂抓取演示。
             </p>
           </div>
 
@@ -43,7 +49,7 @@ export default function VideoShowcase() {
             ))}
           </div>
 
-          <div className="grid gap-8 lg:grid-cols-2">
+          <div className="grid gap-8 lg:grid-cols-3">
             {videos.map((video, index) => (
               <article
                 key={video.title}

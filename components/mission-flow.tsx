@@ -38,7 +38,7 @@ export default function MissionFlow() {
         <div className="py-12 md:py-20 border-t border-gray-800">
           <div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
             <div className="inline-flex text-sm font-semibold py-1 px-3 text-cyan-300 bg-cyan-500/10 border border-cyan-500/30 rounded-full mb-4">
-              评审一眼能看懂的系统闭环
+              系统闭环流程
             </div>
             <h2 className="h2 mb-4">从“看见果实”到“完成抓取”的连续任务链</h2>
             <p className="text-xl text-gray-400">
@@ -70,7 +70,7 @@ export default function MissionFlow() {
             <div className="rounded-lg border border-gray-800 bg-gray-900/70 p-5">
               <div className="text-sm text-gray-500">任务价值</div>
               <div className="mt-2 text-2xl font-bold text-white">闭环作业</div>
-              <p className="mt-2 text-gray-400">评委能直接看到系统集成能力，而不是只看到单个算法或单个机械结构。</p>
+              <p className="mt-2 text-gray-400">把底盘、感知、规划与机械臂执行放到同一条作业链中，展示整机协同能力。</p>
             </div>
             <div className="rounded-lg border border-gray-800 bg-gray-900/70 p-5">
               <div className="text-sm text-gray-500">技术亮点</div>

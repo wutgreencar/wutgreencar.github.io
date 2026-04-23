@@ -7,23 +7,23 @@ const comparisons = [
 
 const highlights = [
   {
-    title: '评委看点 01',
+    title: '展示重点 01',
     value: '系统完整度',
     text: '底盘、感知、规划、机械臂和控制链路都在同一个作业任务中出现。',
   },
   {
-    title: '评委看点 02',
+    title: '展示重点 02',
     value: '农业适配性',
     text: '围绕果园、田间非结构化地形设计，不只是通用移动机器人演示。',
   },
   {
-    title: '评委看点 03',
+    title: '展示重点 03',
     value: '可展示成果',
-    text: '视频、系统图、算法图和文档入口共同支撑答辩时的证据链。',
+    text: '视频、系统图、算法图和文档入口共同呈现项目成果。',
   },
 ]
 
-export default function JudgeValue() {
+export default function ProjectValue() {
   return (
     <section>
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
@@ -33,7 +33,7 @@ export default function JudgeValue() {
               <div className="inline-flex text-sm font-semibold py-1 px-3 text-emerald-300 bg-emerald-500/10 border border-emerald-500/30 rounded-full mb-4">
                 方案价值对比
               </div>
-              <h2 className="h2 mb-4">把创新点变成评委能快速判断的差异</h2>
+              <h2 className="h2 mb-4">把创新点变成清晰可见的方案差异</h2>
               <p className="text-xl text-gray-400">
                 通过对比常规做法与本项目方案，突出六驱平台、视觉定位、分层规划和机械臂协同的综合价值。
               </p>
