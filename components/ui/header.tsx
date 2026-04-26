@@ -5,6 +5,7 @@ const navItems = [
   { label: '首页', href: '/' },
   { label: '关于我们', href: '/about' },
   { label: '技术详情', href: '/learn-more' },
+  { label: '3D模型', href: '/model' },
 ]
 
 export default function Header() {

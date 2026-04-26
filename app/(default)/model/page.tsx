@@ -1,0 +1,57 @@
+import ModelViewer from '@/components/model-viewer'
+
+export const metadata = {
+  title: '3D模型展示 - 绿脉机器人',
+  description: '交互式展示六驱全地形自适应抓取机器人结构。',
+}
+
+const highlights = [
+  {
+    name: '真实GLB模型',
+    value: 'Untitled.glb',
+  },
+  {
+    name: '交互浏览',
+    value: '旋转与缩放',
+  },
+  {
+    name: '网页端适配',
+    value: '自动居中缩放',
+  },
+]
+
+export default function ModelPage() {
+  return (
+    <section className="relative">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+        <div className="pt-32 pb-12 md:pt-40 md:pb-20">
+          <div className="max-w-3xl mx-auto text-center pb-10 md:pb-14">
+            <h1 className="h1 mb-4">3D模型展示</h1>
+            <p className="text-xl text-gray-400">
+              拖拽旋转、滚轮缩放，查看导入的机器人三维模型结构。
+            </p>
+          </div>
+
+          <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_320px] lg:items-start">
+            <ModelViewer />
+
+            <aside className="border border-gray-700 bg-gray-800/70 p-6">
+              <h2 className="text-2xl font-bold text-gray-100 mb-5">结构标注</h2>
+              <div className="space-y-4">
+                {highlights.map((item) => (
+                  <div key={item.name} className="border-b border-gray-700 pb-4 last:border-0 last:pb-0">
+                    <div className="text-sm text-purple-300 mb-1">{item.name}</div>
+                    <div className="text-lg font-semibold text-gray-100">{item.value}</div>
+                  </div>
+                ))}
+              </div>
+              <p className="mt-6 text-sm leading-relaxed text-gray-400">
+                当前页面已接入 public/models/Untitled.glb，适合用于项目介绍和结构说明。后续替换同名 GLB 文件即可更新展示内容。
+              </p>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
