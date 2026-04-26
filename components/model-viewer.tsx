@@ -295,11 +295,10 @@ export default function ModelViewer() {
           const armBox = new THREE.Box3().setFromObject(arm)
           const armHalfW = (armBox.max.x - armBox.min.x) / 2
           const armHalfD = (armBox.max.z - armBox.min.z) / 2
-          arm.position.set(
-            carBox.min.x + armHalfW,
-            carBox.max.y + arm.position.y,
-            carBox.min.z + armHalfD,
-          )
+          // arm bottom is at Y=0 after fitModel; shift up to car top, then to front-left
+          arm.position.x = carBox.min.x + armHalfW
+          arm.position.y += carBox.max.y
+          arm.position.z = carBox.min.z + armHalfD
           combined.add(car, arm)
           handleLoad(combined)
         })
