@@ -11,6 +11,11 @@ type ViewerRefs = {
   resizeObserver?: ResizeObserver
 }
 
+const models = [
+  { label: '小车模型', fileName: 'CAR-1.glb', path: '/models/CAR-1.glb' },
+  { label: '机械臂模型', fileName: 'Untitled.glb', path: '/models/Untitled.glb' },
+]
+
 function createWheel() {
   const wheel = new THREE.Group()
 
@@ -172,12 +177,14 @@ function createRobotModel() {
 export default function ModelViewer() {
   const containerRef = useRef<HTMLDivElement>(null)
   const refs = useRef<ViewerRefs>({})
+  const [activeModel, setActiveModel] = useState(models[0])
   const [viewerStatus, setViewerStatus] = useState('模型加载中')
 
   useEffect(() => {
     const container = containerRef.current
     if (!container) return
     let mounted = true
+    setViewerStatus(`${activeModel.label}加载中`)
 
     const scene = new THREE.Scene()
     scene.background = new THREE.Color(0x111315)
@@ -246,7 +253,7 @@ export default function ModelViewer() {
 
     const loader = new GLTFLoader()
     loader.load(
-      '/models/Untitled.glb',
+      activeModel.path,
       (gltf) => {
         prepareModel(gltf.scene)
         if (mounted) setViewerStatus('')
@@ -254,7 +261,7 @@ export default function ModelViewer() {
       undefined,
       () => {
         prepareModel(createRobotModel())
-        if (mounted) setViewerStatus('真实模型加载失败，已显示示意模型')
+        if (mounted) setViewerStatus(`${activeModel.fileName} 加载失败，已显示示意模型`)
       },
     )
 
@@ -305,10 +312,26 @@ export default function ModelViewer() {
       renderer.dispose()
       container.removeChild(renderer.domElement)
     }
-  }, [])
+  }, [activeModel])
 
   return (
     <div className="relative h-[420px] w-full overflow-hidden border border-gray-700 bg-gray-900 shadow-2xl shadow-black/30 md:h-[560px]">
+      <div className="absolute right-4 top-4 z-10 flex gap-2 border border-gray-700 bg-gray-900/80 p-1 backdrop-blur">
+        {models.map((model) => (
+          <button
+            key={model.path}
+            type="button"
+            className={`px-3 py-2 text-sm font-medium transition ${
+              activeModel.path === model.path
+                ? 'bg-purple-600 text-white'
+                : 'text-gray-300 hover:bg-gray-800 hover:text-white'
+            }`}
+            onClick={() => setActiveModel(model)}
+          >
+            {model.label}
+          </button>
+        ))}
+      </div>
       <div
         ref={containerRef}
         className="h-full w-full"

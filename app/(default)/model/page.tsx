@@ -7,8 +7,8 @@ export const metadata = {
 
 const highlights = [
   {
-    name: '真实GLB模型',
-    value: 'Untitled.glb',
+    name: '模型切换',
+    value: '小车 / 机械臂',
   },
   {
     name: '交互浏览',
@@ -46,7 +46,7 @@ export default function ModelPage() {
                 ))}
               </div>
               <p className="mt-6 text-sm leading-relaxed text-gray-400">
-                当前页面已接入 public/models/Untitled.glb，适合用于项目介绍和结构说明。后续替换同名 GLB 文件即可更新展示内容。
+                当前页面已接入 public/models/CAR-1.glb 和 public/models/Untitled.glb，适合用于项目介绍和结构说明。
               </p>
             </aside>
           </div>
