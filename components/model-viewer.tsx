@@ -291,7 +291,14 @@ export default function ModelViewer() {
           const car = fitModel(orientCar(carGltf.scene), 3.2)
           const arm = fitModel(armGltf.scene, 1.4)
 
-          arm.position.set(-2.65, arm.position.y, -0.35)
+          // Place arm at front-left of car, base resting on car's top surface
+          const carBox = new THREE.Box3().setFromObject(car)
+          const armBox = new THREE.Box3().setFromObject(arm)
+          arm.position.set(
+            carBox.min.x + (carBox.max.x - carBox.min.x) * 0.25,
+            carBox.max.y - armBox.min.y,
+            carBox.min.z + (carBox.max.z - carBox.min.z) * 0.25,
+          )
           combined.add(car, arm)
           handleLoad(combined)
         })
