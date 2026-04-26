@@ -289,7 +289,7 @@ export default function ModelViewer() {
         .then(([carGltf, armGltf]) => {
           const combined = new THREE.Group()
           const car = fitModel(orientCar(carGltf.scene), 3.2)
-          const arm = fitModel(armGltf.scene, 1.4)
+          const arm = fitModel(armGltf.scene, 0.7)
 
           const carBox = new THREE.Box3().setFromObject(car)
           const armBox = new THREE.Box3().setFromObject(arm)
