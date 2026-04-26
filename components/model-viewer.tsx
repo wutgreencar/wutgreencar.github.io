@@ -264,6 +264,12 @@ export default function ModelViewer() {
       modelRoot.add(model)
     }
 
+    const orientCar = (model: THREE.Object3D) => {
+      model.rotation.z = -Math.PI / 2
+      model.updateMatrixWorld(true)
+      return model
+    }
+
     const handleLoad = (model: THREE.Object3D) => {
       prepareModel(model)
       if (mounted) setViewerStatus('')
@@ -282,7 +288,7 @@ export default function ModelViewer() {
       ])
         .then(([carGltf, armGltf]) => {
           const combined = new THREE.Group()
-          const car = fitModel(carGltf.scene, 3.2)
+          const car = fitModel(orientCar(carGltf.scene), 3.2)
           const arm = fitModel(armGltf.scene, 1.4)
 
           arm.position.set(-2.65, arm.position.y, -0.35)
@@ -293,7 +299,7 @@ export default function ModelViewer() {
     } else if (activeModel.path) {
       loader.load(
         activeModel.path,
-        (gltf) => handleLoad(gltf.scene),
+        (gltf) => handleLoad(activeModel.fileName === 'CAR.glb' ? orientCar(gltf.scene) : gltf.scene),
         undefined,
         handleError,
       )
