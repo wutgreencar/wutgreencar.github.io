@@ -8,7 +8,7 @@ export const metadata = {
 const highlights = [
   {
     name: '模型切换',
-    value: '小车 / 机械臂',
+    value: '组合 / 小车 / 机械臂',
   },
   {
     name: '交互浏览',
@@ -46,7 +46,7 @@ export default function ModelPage() {
                 ))}
               </div>
               <p className="mt-6 text-sm leading-relaxed text-gray-400">
-                当前页面已接入 public/models/CAR.glb 和 public/models/Untitled.glb，适合用于项目介绍和结构说明。
+                默认展示小车与机械臂组合模型，机械臂已放置在小车前方。也可以单独查看两个原始模型。
               </p>
             </aside>
           </div>

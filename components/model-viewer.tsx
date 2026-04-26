@@ -11,10 +11,18 @@ type ViewerRefs = {
   resizeObserver?: ResizeObserver
 }
 
+type ModelOption = {
+  label: string
+  fileName: string
+  path?: string
+  kind: 'combined' | 'single'
+}
+
 const models = [
-  { label: '小车模型', fileName: 'CAR.glb', path: '/models/CAR.glb' },
-  { label: '机械臂模型', fileName: 'Untitled.glb', path: '/models/Untitled.glb' },
-]
+  { label: '组合模型', fileName: 'CAR.glb + Untitled.glb', kind: 'combined' },
+  { label: '小车模型', fileName: 'CAR.glb', path: '/models/CAR.glb', kind: 'single' },
+  { label: '机械臂模型', fileName: 'Untitled.glb', path: '/models/Untitled.glb', kind: 'single' },
+] satisfies ModelOption[]
 
 function createWheel() {
   const wheel = new THREE.Group()
@@ -225,7 +233,7 @@ export default function ModelViewer() {
     const modelRoot = new THREE.Group()
     scene.add(modelRoot)
 
-    const prepareModel = (model: THREE.Object3D) => {
+    const fitModel = (model: THREE.Object3D, targetSize = 3.2) => {
       model.traverse((object) => {
         if (object instanceof THREE.Mesh) {
           object.castShadow = true
@@ -237,7 +245,7 @@ export default function ModelViewer() {
       const size = new THREE.Vector3()
       box.getSize(size)
       const maxAxis = Math.max(size.x, size.y, size.z)
-      const scale = maxAxis > 0 ? 3.2 / maxAxis : 1
+      const scale = maxAxis > 0 ? targetSize / maxAxis : 1
       model.scale.setScalar(scale)
 
       model.updateMatrixWorld(true)
@@ -248,6 +256,11 @@ export default function ModelViewer() {
       model.position.z -= center.z
       model.position.y -= scaledBox.min.y
 
+      return model
+    }
+
+    const prepareModel = (model: THREE.Object3D, targetSize = 3.2) => {
+      fitModel(model, targetSize)
       modelRoot.add(model)
     }
 
@@ -261,12 +274,30 @@ export default function ModelViewer() {
     }
 
     const loader = new GLTFLoader()
-    loader.load(
-      activeModel.path,
-      (gltf) => handleLoad(gltf.scene),
-      undefined,
-      handleError,
-    )
+
+    if (activeModel.kind === 'combined') {
+      Promise.all([
+        loader.loadAsync('/models/CAR.glb'),
+        loader.loadAsync('/models/Untitled.glb'),
+      ])
+        .then(([carGltf, armGltf]) => {
+          const combined = new THREE.Group()
+          const car = fitModel(carGltf.scene, 3.2)
+          const arm = fitModel(armGltf.scene, 1.4)
+
+          arm.position.set(-2.65, arm.position.y, -0.35)
+          combined.add(car, arm)
+          handleLoad(combined)
+        })
+        .catch(handleError)
+    } else if (activeModel.path) {
+      loader.load(
+        activeModel.path,
+        (gltf) => handleLoad(gltf.scene),
+        undefined,
+        handleError,
+      )
+    }
 
     modelRoot.traverse((object) => {
       if (object instanceof THREE.Mesh) {
@@ -322,10 +353,10 @@ export default function ModelViewer() {
       <div className="absolute right-4 top-4 z-10 flex gap-2 border border-gray-700 bg-gray-900/80 p-1 backdrop-blur">
         {models.map((model) => (
           <button
-            key={model.path}
+            key={model.fileName}
             type="button"
             className={`px-3 py-2 text-sm font-medium transition ${
-              activeModel.path === model.path
+              activeModel.fileName === model.fileName
                 ? 'bg-purple-600 text-white'
                 : 'text-gray-300 hover:bg-gray-800 hover:text-white'
             }`}
