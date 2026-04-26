@@ -46,7 +46,7 @@ export default function ModelPage() {
                 ))}
               </div>
               <p className="mt-6 text-sm leading-relaxed text-gray-400">
-                当前页面已接入 public/models/CAR-1.glb 和 public/models/Untitled.glb，适合用于项目介绍和结构说明。
+                当前页面已接入 public/models/CAR.glb 和 public/models/Untitled.glb，适合用于项目介绍和结构说明。
               </p>
             </aside>
           </div>

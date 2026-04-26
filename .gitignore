@@ -37,3 +37,6 @@ next-env.d.ts
 
 # contentlayer
 .contentlayer
+
+# source model exports that exceed GitHub's single-file size limit
+/public/models/CAR.obj

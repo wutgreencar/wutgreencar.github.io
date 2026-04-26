@@ -12,7 +12,7 @@ type ViewerRefs = {
 }
 
 const models = [
-  { label: '小车模型', fileName: 'CAR-1.glb', path: '/models/CAR-1.glb' },
+  { label: '小车模型', fileName: 'CAR.glb', path: '/models/CAR.glb' },
   { label: '机械臂模型', fileName: 'Untitled.glb', path: '/models/Untitled.glb' },
 ]
 
@@ -251,18 +251,21 @@ export default function ModelViewer() {
       modelRoot.add(model)
     }
 
+    const handleLoad = (model: THREE.Object3D) => {
+      prepareModel(model)
+      if (mounted) setViewerStatus('')
+    }
+    const handleError = () => {
+      prepareModel(createRobotModel())
+      if (mounted) setViewerStatus(`${activeModel.fileName} 加载失败，已显示示意模型`)
+    }
+
     const loader = new GLTFLoader()
     loader.load(
       activeModel.path,
-      (gltf) => {
-        prepareModel(gltf.scene)
-        if (mounted) setViewerStatus('')
-      },
+      (gltf) => handleLoad(gltf.scene),
       undefined,
-      () => {
-        prepareModel(createRobotModel())
-        if (mounted) setViewerStatus(`${activeModel.fileName} 加载失败，已显示示意模型`)
-      },
+      handleError,
     )
 
     modelRoot.traverse((object) => {
