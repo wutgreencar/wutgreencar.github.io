@@ -265,7 +265,7 @@ export default function ModelViewer() {
     }
 
     const orientCar = (model: THREE.Object3D) => {
-      model.rotation.z = -Math.PI / 2
+      model.rotation.x = -Math.PI / 2
       model.updateMatrixWorld(true)
       return model
     }
