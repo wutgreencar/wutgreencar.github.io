@@ -297,7 +297,7 @@ export default function ModelViewer() {
           const armHalfD = (armBox.max.z - armBox.min.z) / 2
           arm.position.x = carBox.max.x / 2 - armHalfW
           arm.position.y += carBox.max.y / 2
-          arm.position.z = carBox.min.z / 4 + armHalfD
+          arm.position.z = carBox.min.z / 12 + armHalfD
           combined.add(car, arm)
           handleLoad(combined)
         })
