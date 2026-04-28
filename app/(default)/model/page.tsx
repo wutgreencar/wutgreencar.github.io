@@ -7,16 +7,16 @@ export const metadata = {
 
 const highlights = [
   {
-    name: '模型切换',
-    value: '组合 / 小车 / 机械臂',
+    name: '六轮越野底盘',
+    value: '复杂地形通行与稳定驻停',
   },
   {
-    name: '交互浏览',
-    value: '旋转与缩放',
+    name: '机械臂安装位',
+    value: '目标靠近、夹取与复位动作',
   },
   {
-    name: '网页端适配',
-    value: '自动居中缩放',
+    name: '组合模型浏览',
+    value: '查看底盘与机械臂空间关系',
   },
 ]
 
@@ -46,7 +46,7 @@ export default function ModelPage() {
                 ))}
               </div>
               <p className="mt-6 text-sm leading-relaxed text-gray-400">
-                默认展示小车与机械臂组合模型，机械臂已放置在小车前方。也可以单独查看两个原始模型。
+                默认展示小车与机械臂组合模型，用于观察六轮底盘、机械臂作业空间和整机布局关系。也可以单独查看小车或机械臂原始模型。
               </p>
             </aside>
           </div>

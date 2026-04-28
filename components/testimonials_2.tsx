@@ -111,7 +111,7 @@ export default function Testimonials() {
               <div className="text-gray-700 font-medium mt-6 pt-5 border-t border-gray-700">
                 <cite className="text-gray-200 not-italic">局部路径规划</cite> -
                 <ModalText
-                  title="网络架构"
+                  title="局部路径规划"
                   content={
                     <div className="md:grid md:grid-cols-12 md:gap-6 items-center">
                       <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-5 lg:col-span-6 mb-8 md:mb-0 rtl">
@@ -127,11 +127,6 @@ export default function Testimonials() {
                           <p className="text-xl text-gray-400 mb-4">在路径生成与平滑过程中，确定路径的最优结构是一个NP难问题，精确求解计算复杂度极高。在考虑众多采样视点的连接顺序以及如何平滑路径以满足曲率约束和降低成本时，如果采用穷举法或其他精确算法，计算量会随着视点数量的增加呈指数级增长，在实际应用中难以实现实时规划[19]。
                             因此使用贪心策略，在处理路径分段和确定内点的时，对每个视点仅检查一次。算法按顺序依次尝试将每个视点设为内点，计算重新平滑路径段后的成本变化。如果设为内点后路径成本降低且满足曲率约束，就确定该视点为内点；否则，保持其为断点。这种局部最优的选择方式，避免了对所有可能的视点组合进行全面搜索，大大减少了计算量。
                             使用标准旅行商问题（TSP）算法确定视点的遍历顺序。通过计算视点之间的最短路径，构建距离矩阵，然后求解TSP得到一个大致合理的视点顺序。
-                          </p>
-                          <p className="text-xl text-gray-400 mb-4"> <p className="text-xl text-gray-400 mb-4">在路径生成与平滑过程中，确定路径的最优结构是一个NP难问题，精确求解计算复杂度极高。在考虑众多采样视点的连接顺序以及如何平滑路径以满足曲率约束和降低成本时，如果采用穷举法或其他精确算法，计算量会随着视点数量的增加呈指数级增长，在实际应用中难以实现实时规划[19]。
-                            因此使用贪心策略，在处理路径分段和确定内点的时，对每个视点仅检查一次。算法按顺序依次尝试将每个视点设为内点，计算重新平滑路径段后的成本变化。如果设为内点后路径成本降低且满足曲率约束，就确定该视点为内点；否则，保持其为断点。这种局部最优的选择方式，避免了对所有可能的视点组合进行全面搜索，大大减少了计算量。
-                            使用标准旅行商问题（TSP）算法确定视点的遍历顺序。通过计算视点之间的最短路径，构建距离矩阵，然后求解TSP得到一个大致合理的视点顺序。
-                          </p>
                           </p>
                           <ul className="text-lg text-gray-400 -mb-2">
                             <li className="flex items-center mb-2">
@@ -179,7 +174,7 @@ export default function Testimonials() {
               <div className="text-gray-700 font-medium mt-6 pt-5 border-t border-gray-700">
                 <cite className="text-gray-200 not-italic">全局规划</cite> -
                 <ModalText
-                  title="可通行区域融合分割"
+                  title="全局规划"
                   content={
                     <div className="md:grid md:grid-cols-12 md:gap-6 items-center">
                       <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-5 lg:col-span-6 mb-8 md:mb-0 rtl">

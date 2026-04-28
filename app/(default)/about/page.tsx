@@ -1,5 +1,5 @@
 export const metadata = {
-    title: '关于我们 - 运输机器人项目',
+    title: '关于我们 - 绿脉六轮农业自主采摘机器人',
     description: '了解我们的团队和项目愿景',
 }
 
